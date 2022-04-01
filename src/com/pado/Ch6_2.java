@@ -1,3 +1,5 @@
+package com.pado;
+
 class Tv{
     String color;
     boolean power;

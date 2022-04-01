@@ -1,3 +1,5 @@
+package com.pado;
+
 public class Ch6_4 {
     public static void main(String[] args) {
         // 오버로딩: 같은 이름을 갖는 메서드, 매개변수 개수나 타입이 다름.

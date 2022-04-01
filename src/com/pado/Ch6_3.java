@@ -1,3 +1,4 @@
+package com.pado;
 
 public class Ch6_3 {
 

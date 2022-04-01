@@ -1,9 +1,11 @@
+package com.pado;
+
 // 생성자
 public class Ch6_5 {
     public static void main(String[] args) {
         //기본 생성자 테스트
         Data1 d1 = new Data1();
-        // Data2 d2 = new Data2(); // 오류, 디폴트 생성자가 없어졌기 때문
+        // com.pado.Data2 d2 = new com.pado.Data2(); // 오류, 디폴트 생성자가 없어졌기 때문
         Data2 d2 = new Data2(3);
         System.out.println(d2.value);
 
