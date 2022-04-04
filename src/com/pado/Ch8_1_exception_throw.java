@@ -4,10 +4,29 @@ package com.pado;
 
 public class Ch8_1_exception_throw {
     public static void main(String[] args) throws Exception{
-        method1(); // method1에서 오류 바음
+        //method1(); // method1에서 오류 바음
+
+        try{
+            Test.method();
+        }catch (Exception e){
+            System.out.println("오류발생2");
+        }finally {
+            System.out.println("무조건 출력");
+        }
+
     }
 
-    static void method1() throws Exception{
+}
+
+class Test{
+    static void method() throws Exception{
+        System.out.println("오류발생");
+        throw new Exception();
+    }
+}
+
+
+/*static void method1() throws Exception{
         try{method2();} // method1에서 method2로부터 발생한 에러를 받음, 이를 다시 main으로 thow. 여기서 처리해주면 Main은 오류 난 사실도 모르게된다.
         catch (Exception e){
             System.out.println("method2 호출시 예외 발생");
@@ -16,5 +35,4 @@ public class Ch8_1_exception_throw {
 
     static void method2() throws Exception{
         throw new Exception(); //여기서 예외 발생, 호출한 곳으로 throw
-    }
-}
+    }*/
