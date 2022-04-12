@@ -21,7 +21,7 @@ package com.pado;
 
  > 문장 흐름
  - try 내에서 예외 발생한 경우
- - 일치하는 catch를 찾다가, 찾으면 캐치 문장 수행하고 전체 트라이 캐치르 ㄹ빠져나간다
+ - 일치하는 catch를 찾다가, 찾으면 캐치 문장 수행하고 전체 트라이 캐치를 빠져나간다
 
  - 트라이 예외 발생하지 않은 경우 캐치를 거치지 않는다.
 
@@ -52,7 +52,7 @@ public class Ch8_1_exception {
         int number = 100;
         int result = 0;
         int random = 0;
-        for(int i=0  ; i<10 ; i++){
+        for(int i=0  ; i<3 ; i++){
             try {
                 result = number;
                 random = (int)(Math.random() * 10);
@@ -73,11 +73,11 @@ public class Ch8_1_exception {
 
         // 고의로 예외 발생시키기
         try{
-            Exception e1 = new Exception("고의 2발생");
-            throw new MyException("사용자정의 오류 발생");
-            //throw e1; // throw는 예외를 발생시키는 것, throws는 메소드에 선언해서 예외를 넘기는 것.
+            Exception e1 = new Exception("고의 발생-2");
+            //throw new MyException("사용자정의 오류 발생-1");
+            throw e1; // throw는 예외를 발생시키는 것, 호출한 메서드로 오류 던짐. throws는 메소드에 선언해서 예외를 넘기는 것.
         }catch (Exception e){
-            System.out.println("에러메세지 " + e.getMessage()); // 고의로 발생시킨 에러메세지를 받아온다.
+            System.out.println("에러메세지 " + e.getMessage()); // throw로 고의로 발생시킨 에러메세지를 받아온다.
             e.printStackTrace();
         }
         System.out.println("비정상종료");

@@ -41,11 +41,9 @@ public class Ch7_4_modifier {
 
 class Card2{
     final int NUM;
-
     Card2(int n){
         this.NUM = n; // final은 초기화해주어야 오류 안남
     }
-
     Card2(){
         this(100);
     }
